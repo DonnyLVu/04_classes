@@ -1,11 +1,12 @@
-const { Stack } = require('./Stack.js')
+const { linter } = require('./Linter.js')
 const express = require('express');
 const app = express();
 
 app.use(express.json());
 
-app.post('/lint', (req, res) => {
-  res.send('Lint');
+app.post('/api/v1/lint', (req, res) => {
+  const result = linter(req.body.lint)
+  res.send(result);;
 });
 
 app.listen(3333, () => {

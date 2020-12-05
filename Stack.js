@@ -6,7 +6,7 @@ class Stack {
   }
 
   push(item) {
-    this.#stack.push(item);
+    this.#stack = []
   }
 
   pop() {
